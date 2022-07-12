@@ -12,3 +12,6 @@ https://pymupdf.readthedocs.io/en/latest/document.html?highlight=TOC#Document.se
 
 Get TOC in docs
 https://pymupdf.readthedocs.io/en/latest/document.html?highlight=TOC#Document.get_toc
+
+OCR PDF page
+https://github.com/pymupdf/PyMuPDF-Utilities/blob/master/jupyter-notebooks/partial-ocr.ipynb
