@@ -5,16 +5,15 @@ doc = fitz.open("1.pdf")
 
 print(doc.get_page_labels())
 
-#print(doc.get_toc())
-
-# Using readlines()
-file1 = open('index.txt', 'r', encoding='utf8')
-Lines = file1.readlines()
-file1.close()
+# Read plain text file with TOC entries.
+# String format "<Level>#<Title>#<Page>"
+toc_file = open('index.txt', 'r', encoding='utf8')
+toc_lines = toc_file.readlines()
+toc_file.close()
 
 toc = []
 
-for line in Lines:
+for line in toc_lines:
     tokens = line.split('#')
     level = int(tokens[0])
     title = tokens[1].strip()
