@@ -22,4 +22,5 @@ https://github.com/pymupdf/PyMuPDF-Utilities/blob/master/jupyter-notebooks/parti
 Файлы данных Tesseract https://tesseract-ocr.github.io/tessdoc/#traineddata-files
 
 Парсинг аргументов командной строки
+https://docs.python.org/3/howto/argparse.html#id1
 https://docs.python.org/3/library/argparse.html
