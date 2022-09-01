@@ -25,3 +25,4 @@ for page_index in range(args.page_count):
 toc_file = open(args.out, "w", encoding="utf8")
 toc_lines = toc_file.write(page_text)
 toc_file.close()
+
