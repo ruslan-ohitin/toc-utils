@@ -12,7 +12,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('pdf_file', help='PDF file name')
 parser.add_argument('-i', '--index', help='File name with TOC index', default='index.txt')
 parser.add_argument('-o', '--out', help='Modified PDF file name', default='out.pdf')
-parser.add_argument('-d', '--delta', help='Number to add to (or subtract from) page number in TOC index file', type=int default=0)
+parser.add_argument('-d', '--delta', help='Number to add to (or subtract from) page number in TOC index file', type=int, default=0)
 
 args = parser.parse_args()
 
@@ -27,6 +27,11 @@ toc_file.close()
 toc = []
 for line in toc_lines:
     tokens = line.split("#")
+    if len(tokens) < 3:
+        print("Change format of this line as <Level>#<Title>#<Page>")
+        print(line)
+        break
+
     level = int(tokens[0])
     title = tokens[1].strip()
     page = int(tokens[2]) + args.delta
@@ -34,6 +39,7 @@ for line in toc_lines:
     toc.append([level, title, page])
 
 doc.set_toc(toc, collapse=0)
+
 if args.out:
     doc.save(args.out)
 
